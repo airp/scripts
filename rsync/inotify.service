@@ -1,0 +1,13 @@
+[Unit]
+Description=Inotify Service
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/home/airp/Documents/scripts/rsync/inotify.sh
+User=airp
+Group=airp
+
+[Install]
+WantedBy=multi-user.target
+
