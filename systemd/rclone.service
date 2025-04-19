@@ -1,0 +1,12 @@
+[Unit]
+Description=Rclone
+After=network-online.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/rclone --config /home/airp/.config/rclone/rclone.conf mount od:/ /home/airp/Sync/onedrive --copy-links --no-gzip-encoding --no-check-certificate --allow-other --allow-non-empty --umask 022 --vfs-cache-mode writes
+Restart=on-abort
+User=root
+
+[Install]
+WantedBy=default.target
