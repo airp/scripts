@@ -34,9 +34,9 @@ def fire():
     pending = False
     subprocess.Popen(
         [
-            os.path.expanduser(
-                "~/.config/tmux/plugins/tmux-window-name/scripts/rename_session_windows.py"
-            )
+            "tmux",
+            "run-shell",
+            "python3 ~/.config/tmux/plugins/tmux-window-name/scripts/rename_session_windows.py",
         ]
     )
 
